@@ -48,8 +48,24 @@ function game() {
       console.log("CPU selects " + `${computerSelection}`);
       console.log(playRound(playerSelection, computerSelection));
       console.log("Player " + winPlayer,"Cpu " + winCpu,"Draws " + draw);
-
-   }
+   
+   if (i > 5) { break; }
+      function result () {
+      let win = winPlayer>winCpu;
+      let lose = winCpu>winPlayer;
+      const tie = winPlayer == winCpu;
+      
+      if (win) {
+         return "You win - more wins than the CPU!! ";
+      } else if (lose) {
+         return "You lose - CPU more wins than you!! ";
+      } else {
+         return "Draw game - equal wins to CPU! ";
+      }
+    }
+     
+ }
+ console.log(result () + "End of 5 rounds"); 
 }
 
 game()
